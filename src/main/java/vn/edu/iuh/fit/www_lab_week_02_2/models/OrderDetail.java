@@ -1,4 +1,4 @@
-package vn.edu.iuh.fit.www_lab_week_02_1.models;
+package vn.edu.iuh.fit.www_lab_week_02_2.models;
 
 public class OrderDetail {
     //order_detail (order_id, product_id, quantity, price, note)
