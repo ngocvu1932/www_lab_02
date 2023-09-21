@@ -1,6 +1,6 @@
 package vn.edu.iuh.fit.www_lab_week_02_2.models;
 
-import vn.edu.iuh.fit.www_lab_week_02_1.enums.EnumStatus;
+import vn.edu.iuh.fit.www_lab_week_02_2.enums.EnumStatus;
 import java.sql.Date;
 
 public class Employee {

@@ -1,6 +1,6 @@
 package vn.edu.iuh.fit.www_lab_week_02_2.models;
 
-import vn.edu.iuh.fit.www_lab_week_02_1.enums.EnumProduct;
+import vn.edu.iuh.fit.www_lab_week_02_2.enums.EnumProduct;
 
 public class Product {
     //product (product_id, name, description, unit, manufacturer_name, status)
