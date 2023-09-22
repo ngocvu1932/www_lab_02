@@ -16,4 +16,5 @@ public class ProductImage {
     @Column(name="path", columnDefinition = "VARCHAR(250)")
     private String path;
 
+
 }

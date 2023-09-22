@@ -19,4 +19,5 @@ public class Customer {
     @Column(name = "address", columnDefinition = "VARCHAR(150)")
     private String address;
 
+
 }

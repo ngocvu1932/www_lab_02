@@ -15,4 +15,5 @@ public class ProductPrice {
     @Column(name="price", columnDefinition = "DOUBLE")
     private double price;
 
+
 }

@@ -20,4 +20,5 @@ public class Product {
     private String manufacturerName;
     private EnumProduct status;
 
+
 }

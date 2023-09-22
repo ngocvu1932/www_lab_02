@@ -15,4 +15,5 @@ public class Order {
     @Column(name="order_date", columnDefinition = "DATETIME(6)")
     private Date orderDate;
 
+
 }

@@ -13,4 +13,5 @@ public class OrderDetail {
     private double price;
     @Column(name="note", columnDefinition = "VARCHAR(255)")
     private String note;
+
 }

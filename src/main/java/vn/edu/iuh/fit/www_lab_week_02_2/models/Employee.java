@@ -21,6 +21,7 @@ public class Employee {
 
     @Column(name="address", columnDefinition = "VARCHAR(250)")
     private String address;
+
     private EnumStatus status;
 
 }
