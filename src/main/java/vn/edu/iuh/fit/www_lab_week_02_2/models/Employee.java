@@ -1,11 +1,13 @@
 package vn.edu.iuh.fit.www_lab_week_02_2.models;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import vn.edu.iuh.fit.www_lab_week_02_2.enums.EnumStatus;
 import java.sql.Date;
 
+@Entity
 @Table
 public class Employee {
     // employee (emp_id, full_name, dob, email, phone, address, status)
@@ -23,5 +25,6 @@ public class Employee {
     private String address;
 
     private EnumStatus status;
+
 
 }

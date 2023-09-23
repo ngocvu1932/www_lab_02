@@ -1,9 +1,8 @@
 package vn.edu.iuh.fit.www_lab_week_02_2.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
+@Entity
 @Table
 public class ProductImage {
     // duct_image (product_id, image_id, path, alternative)
@@ -15,6 +14,10 @@ public class ProductImage {
     private String alternative;
     @Column(name="path", columnDefinition = "VARCHAR(250)")
     private String path;
+
+    @ManyToOne
+    @JoinColumn(name="product_id")
+    private Product product_id;
 
 
 }

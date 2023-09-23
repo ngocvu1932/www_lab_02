@@ -1,7 +1,9 @@
 package vn.edu.iuh.fit.www_lab_week_02_2.models;
 
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
 
+@Entity
+@Table
 public class OrderDetail {
     //order_detail (order_id, product_id, quantity, price, note)
 //    private String orderID;
@@ -13,5 +15,15 @@ public class OrderDetail {
     private double price;
     @Column(name="note", columnDefinition = "VARCHAR(255)")
     private String note;
+
+    @Id
+    @ManyToOne
+    @JoinColumn(name="order_id")
+    private Order order_id;
+
+    @Id
+    @ManyToOne
+    @JoinColumn(name="product_id")
+    private Product product_id;
 
 }

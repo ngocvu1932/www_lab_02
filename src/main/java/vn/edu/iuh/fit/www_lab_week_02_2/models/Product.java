@@ -1,9 +1,11 @@
 package vn.edu.iuh.fit.www_lab_week_02_2.models;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import vn.edu.iuh.fit.www_lab_week_02_2.enums.EnumProduct;
+@Entity
 @Table
 public class Product {
     //product (product_id, name, description, unit, manufacturer_name, status)

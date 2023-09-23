@@ -1,9 +1,11 @@
 package vn.edu.iuh.fit.www_lab_week_02_2.models;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+@Entity
 @Table
 public class Customer {
     // ustomer (cust_id, cust_name, email, phone, address)
