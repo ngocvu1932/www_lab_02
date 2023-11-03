@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name="order_detail")
+@NamedQueries(
+        @NamedQuery(name = "OrderDetail.findAll", query = "SELECT od from OrderDetail od")
+)
 public class OrderDetail {
     @Column(name="quantity", columnDefinition = "DOUBLE")
     private double quantity;

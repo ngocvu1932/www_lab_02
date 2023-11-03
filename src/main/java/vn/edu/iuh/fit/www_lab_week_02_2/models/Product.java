@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import vn.edu.iuh.fit.www_lab_week_02_2.enums.EnumProduct;
 @Entity
 @Table(name="product")
+@NamedQueries(
+        @NamedQuery(name = "Product.findAll", query = "SELECT p from Product p")
+)
 public class Product {
     @Id
     @Column(name = "product_id", columnDefinition = "BIGINT(20)", nullable = false)

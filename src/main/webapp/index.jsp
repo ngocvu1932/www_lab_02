@@ -1,4 +1,5 @@
-<%@ page import="vn.edu.iuh.fit.www_lab_week_02_2.services.EmployeeServices" %>
+<%@ page import="vn.edu.iuh.fit.www_lab_week_02_2.services.EmployeeService" %>
+<%@ page import="vn.edu.iuh.fit.www_lab_week_02_2.services.EmployeeService" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -12,6 +13,6 @@
 </body>
 
 <%
-    EmployeeServices employeeServices = new EmployeeServices();
+    EmployeeService employeeService = new EmployeeService();
 %>
 </html>

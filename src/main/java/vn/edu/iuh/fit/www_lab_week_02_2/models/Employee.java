@@ -7,6 +7,9 @@ import java.sql.Date;
 
 @Entity
 @Table(name="employee")
+@NamedQueries(
+        @NamedQuery(name = "Employee.findAll", query = "SELECT e from Employee e")
+)
 public class Employee {
     @Id
     @Column(name="emp_id", columnDefinition = "BIGINT(20)", nullable = false)

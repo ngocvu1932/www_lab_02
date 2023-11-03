@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name="customer")
+@NamedQueries(
+        @NamedQuery(name="Customer.findAll", query = "SELECT c from Customer c")
+)
 public class Customer {
     @Id
     @Column(name="cust_id", columnDefinition = "BIGINT(20)", nullable = false)

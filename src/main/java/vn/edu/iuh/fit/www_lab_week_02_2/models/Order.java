@@ -6,6 +6,9 @@ import java.sql.Date;
 
 @Entity
 @Table(name="orders")
+@NamedQueries(
+        @NamedQuery(name = "Order.findAll", query = "SELECT o from Order o")
+)
 public class Order {
     @Id
     @Column(name="order_id", columnDefinition = "BIGINT(20)", nullable = false)
