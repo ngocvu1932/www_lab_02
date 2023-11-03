@@ -5,7 +5,6 @@ import vn.edu.iuh.fit.www_lab_week_02_2.enums.EnumProduct;
 @Entity
 @Table(name="product")
 public class Product {
-    //product (product_id, name, description, unit, manufacturer_name, status)
     @Id
     @Column(name = "product_id", columnDefinition = "BIGINT(20)", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)

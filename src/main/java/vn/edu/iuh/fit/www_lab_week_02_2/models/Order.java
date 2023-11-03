@@ -7,7 +7,6 @@ import java.sql.Date;
 @Entity
 @Table(name="orders")
 public class Order {
-    //order (order_id, order_date, emp_id, cust_id)
     @Id
     @Column(name="order_id", columnDefinition = "BIGINT(20)", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)

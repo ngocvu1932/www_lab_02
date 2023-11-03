@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="customer")
 public class Customer {
-    // ustomer (cust_id, cust_name, email, phone, address)
     @Id
     @Column(name="cust_id", columnDefinition = "BIGINT(20)", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)

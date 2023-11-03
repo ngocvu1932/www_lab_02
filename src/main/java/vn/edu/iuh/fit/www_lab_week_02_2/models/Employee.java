@@ -1,14 +1,13 @@
 package vn.edu.iuh.fit.www_lab_week_02_2.models;
 
 import jakarta.persistence.*;
-import vn.edu.iuh.fit.www_lab_week_02_2.enums.EnumStatus;
+import vn.edu.iuh.fit.www_lab_week_02_2.enums.EmployeeStatus;
+
 import java.sql.Date;
-import java.util.List;
 
 @Entity
 @Table(name="employee")
 public class Employee {
-    // employee (emp_id, full_name, dob, email, phone, address, status)
     @Id
     @Column(name="emp_id", columnDefinition = "BIGINT(20)", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,21 +24,16 @@ public class Employee {
 
     @Column(name="status", nullable = false)
     @Enumerated(EnumType.ORDINAL)
-    private EnumStatus status;
+    private EmployeeStatus status;
 
-//    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    private List<Order> orders;
-
-    public Employee(long employeeID, String fullName, Date dateOfBirth, String phone, String address, EnumStatus status) {
+    public Employee(long employeeID, String fullName, Date dateOfBirth, String phone, String address, EmployeeStatus status) {
         this.employeeID = employeeID;
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
         this.phone = phone;
         this.address = address;
         this.status = status;
-        //this.orders = orders;
     }
-
     public Employee() {
     }
 
@@ -83,11 +77,11 @@ public class Employee {
         this.address = address;
     }
 
-    public EnumStatus getStatus() {
+    public EmployeeStatus getStatus() {
         return status;
     }
 
-    public void setStatus(EnumStatus status) {
+    public void setStatus(EmployeeStatus status) {
         this.status = status;
     }
 

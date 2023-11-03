@@ -7,7 +7,6 @@ import java.sql.Date;
 @Entity
 @Table(name="product_price")
 public class ProductPrice {
-    // product_price (product_id, price_date_time, price, note)
     @Id
     @Column(name = "price_date_time", columnDefinition = "DATETIME(6)")
     private Date priceDateTime;

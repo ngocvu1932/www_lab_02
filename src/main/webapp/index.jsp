@@ -1,3 +1,4 @@
+<%@ page import="vn.edu.iuh.fit.www_lab_week_02_2.services.EmployeeServices" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -5,9 +6,12 @@
     <title>JSP - Hello World</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
+<h1> Ngô Ngọc Vũ_20047731_week_02
 </h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
 </body>
+
+<%
+    EmployeeServices employeeServices = new EmployeeServices();
+%>
 </html>

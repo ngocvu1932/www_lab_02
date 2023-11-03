@@ -5,10 +5,6 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="order_detail")
 public class OrderDetail {
-    //order_detail (order_id, product_id, quantity, price, note)
-//    private String orderID;
-//    private String productID;
-
     @Column(name="quantity", columnDefinition = "DOUBLE")
     private double quantity;
     @Column(name="price", columnDefinition = "DOUBLE")

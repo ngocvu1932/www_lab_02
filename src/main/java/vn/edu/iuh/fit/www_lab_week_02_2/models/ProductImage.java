@@ -5,7 +5,6 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="product_image")
 public class ProductImage {
-    // duct_image (product_id, image_id, path, alternative)
     @Id
     @Column(name="image_id", columnDefinition = "BIGINT(20)", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
