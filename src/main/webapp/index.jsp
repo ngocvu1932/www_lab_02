@@ -10,9 +10,10 @@
 <h1> Ngô Ngọc Vũ_20047731_week_02
 </h1>
 <br/>
-</body>
 
+    <a href="controller?action=product_lists">Danh sách sản phẩm</a>
 <%
     EmployeeService employeeService = new EmployeeService();
 %>
+</body>
 </html>
