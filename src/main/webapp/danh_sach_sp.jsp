@@ -1,6 +1,7 @@
-<%@ page import="vn.edu.iuh.fit.www_lab_week_02_2.services.ProductService" %>
+<%@ page import="vn.edu.iuh.fit.www_lab_week_02_2.backend.services.ProductService" %>
 <%@ page import="java.util.List" %>
-<%@ page import="vn.edu.iuh.fit.www_lab_week_02_2.models.Product" %><%--
+<%@ page import="vn.edu.iuh.fit.www_lab_week_02_2.backend.models.Product" %>
+<%@ page import="vn.edu.iuh.fit.www_lab_week_02_2.frontend.models.ProductModel" %><%--
   Created by IntelliJ IDEA.
   User: Ngoc Vu
   Date: 10/11/2023
@@ -11,6 +12,7 @@
 <html>
 <head>
     <title> Danh sách sản phẩm </title>
+    <link rel="stylesheet" href="webjars/bootstrap/5.3.2/css/bootstrap.min.css">
     <style>
         table, th, td {
             border: 1px solid;
@@ -21,7 +23,7 @@
         }
 
         tr:hover {
-            background-color: coral;
+            background-color: antiquewhite;
         }
 
         th {
@@ -29,51 +31,33 @@
             color: white;
             text-align: left;
         }
-
-        /*.grid-container {*/
-        /*    display: grid;*/
-        /*    grid-template-columns: auto auto;*/
-        /*    gap: 10px;*/
-        /*    !*background-color: #2196F3;*!*/
-        /*    padding: 10px;*/
-        /*}*/
-
-        /*.grid-container > div {*/
-        /*    !*background-color: rgba(255, 255, 255, 0.8);*!*/
-        /*    text-align: center;*/
-        /*    padding: 20px 0;*/
-        /*    font-size: 30px;*/
-        /*}*/
     </style>
+
+    <script>
+        function deleteProduct(id) {
+            if (confirm("Chắc muốn xóa?")) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("DELETE", "controller?action=deletePro&id="+id, true);
+                xhr.onreadystatechange= function () {
+                    if (xhr.readyState===4 && xhr.status===200) {
+                        location.reload();
+                    }
+                }
+                xhr.send();
+            }
+        }
+    </script>
 </head>
 <body>
 
     <h1> Danh sách sản phẩm </h1>
 
     <%
+//        ProductModel productModel = new ProductModel();
         ProductService productService = new ProductService();
         List<Product> productList = productService.getAllPro();
     %>
-<%--    <div class="grid-container">--%>
-<%--        <%--%>
-<%--            if (!productList.isEmpty()) {--%>
-<%--                for (Product productL: productList ) {--%>
-<%--        %>--%>
 
-<%--        <div>--%>
-
-<%--            <label> <%=productL.getName()%>  </label>--%>
-
-<%--        </div>--%>
-
-<%--        <%--%>
-<%--            }--%>
-<%--        }%>--%>
-<%--    </div>--%>
-
-<%--    <div>--%>
-<%--        <img src="img/tesst.png">--%>
-<%--    </div>--%>
 
     <table >
         <tr>
@@ -83,11 +67,13 @@
             <th > <h4> Status </h4> </th>
             <th > <h4> Unit </h4> </th>
             <th > <h4> Description </h4> </th>
+            <th > <a class="btn btn-primary" href="controller?action=add_product">Thêm sản phẩm</a>  </th>
         </tr>
 
         <%
             if (!productList.isEmpty()) {
                 for (Product productL: productList ) {
+                    if (productL.getStatus().getValue() != 2) {
         %>
 
         <tr>
@@ -97,8 +83,12 @@
             <td> <%=productL.getStatus()%> </td>
             <td> <%=productL.getUnit()%> </td>
             <td> <%=productL.getDescription()%> </td>
+            <td>
+                <a class="btn btn-danger" href="javascript:void(0)" onclick="deleteProduct(<%=productL.getProductID()%>)" >Delete</a>
+                <a class="btn btn-info" href="cap_nhat_sanpham.jsp?id=<%=productL.getProductID()%>">Update</a>
+            </td>
         </tr>
-        <% }
+        <% }}
         }%>
     </table>
 
